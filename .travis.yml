@@ -8,15 +8,11 @@
 # - the scripts section of the package.json file
 # - the .travis.yml file
 language: node_js
-before_script: "./node_modules/.bin/cake test-setup; gem install sass compass"
+before_script: "./node_modules/.bin/cake test-setup"
 script: "npm test"
 node_js:
-  - "0.8"
   - "0.10"
 notifications:
-  irc:
-    - "irc.freenode.org#bevry-dev"
-    - "irc.freenode.org#docpad-dev"
   email:
     recipients:
-      - travisci@bevry.me
+      - hello@jimmyking.me
