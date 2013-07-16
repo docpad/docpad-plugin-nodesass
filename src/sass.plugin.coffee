@@ -4,6 +4,7 @@ module.exports = (BasePlugin) ->
   safeps = require('safeps')
   fs = require('fs')
   {TaskGroup} = require('taskgroup')
+  sass = require('node-sass')
 
   # Define Plugin
   class SassPlugin extends BasePlugin
@@ -13,22 +14,13 @@ module.exports = (BasePlugin) ->
     # Plugin config
     # Only on the development environment use expanded, otherwise use compressed
     config:
-      sassPath: null
-      scssPath: null
-      compass: null
       debugInfo: false
-      sourcemap: false
-      outputStyle: 'compressed'
-      requireLibraries: null
+      #sourcemap: false
+      #outputStyle: 'compressed'
       renderUnderscoreStylesheets: false
       environments:
         development:
-          outputStyle: 'expanded'
-
-    # Locale
-    locale:
-      sassNotInstalled: 'SASS does not appear to be available on your system'
-      scssNotInstalled: 'SCSS does not appear to be available on your system'
+          debugInfo: 'normal'
 
     # Generate Before
     generateBefore: (opts,next) ->
@@ -37,21 +29,6 @@ module.exports = (BasePlugin) ->
 
       # Group
       tasks = new TaskGroup().setConfig(concurrency:0).once('complete',next)
-
-      # Determine if compass is installed
-      unless config.compass?
-        tasks.addTask (complete) ->
-          safeps.getExecPath 'compass', (err,path) ->
-            config.compass = path?
-            return complete()
-
-      # Determine sass executable path
-      ['sass','scss'].forEach (thing) ->
-        unless config[thing+'Path']?
-          tasks.addTask (complete) ->
-            safeps.getExecPath thing, (err,path) ->
-              config[thing+'Path'] = path ? false
-              return complete()
 
       # Fire tasks
       tasks.run()
@@ -75,7 +52,6 @@ module.exports = (BasePlugin) ->
     render: (opts,next) ->
       # Prepare
       config = @config
-      locale = @locale
       {inExtension,outExtension,file} = opts
 
       # If SASS/SCSS then render
@@ -83,42 +59,30 @@ module.exports = (BasePlugin) ->
         # Fetch useful paths
         fullDirPath = file.get('fullDirPath')
 
+        # Define callback fn
+        callback = (css) ->
+          opts.content = css
+          return next()
+
         # Prepare the command and options
-        commandOpts = {stdin:opts.content}
-        execPath = config[inExtension+'Path']
+        commandOpts =
+          success: callback
+          error: (err)->
+            return next(new Error(err))
 
-        # Check if we have the executable for that extension
-        return next(new Error(locale[inExtension+'NotInstalled']))  unless execPath
-
-        # Build our command
-        if config.sourcemap
-          command = [execPath, file.attributes.fullPath + ':' + file.attributes.outPath, '--no-cache', '--update', '--sourcemap']
-          commandOpts = {}
-        else
-          command = [execPath, '--stdin', '--no-cache']
         if fullDirPath
-          command.push('--load-path')
-          command.push(fullDirPath)
-        if config.compass
-          command.push('--compass')
+          commandOpts.includePaths = [fullDirPath]
         if config.debugInfo
-          command.push('--debug-info')
-        if config.outputStyle
-          command.push('--style')
-          command.push(config.outputStyle)
-        if config.requireLibraries
-          for name in config.requireLibraries
-            command.push('--require')
-            command.push(name)
+          commandOpts.sourceComments = config.debugInfo
+          commandOpts.file = file.attributes.fullPath
+        else
+          commandOpts.data = opts.content
+        # outputStyle is not currently supported by libsass
+        #if config.outputStyle
+          #commandOpts.outputStyle = config.outputStyle
 
         # Spawn the appropriate process to render the content
-        safeps.spawn command, commandOpts, (err,stdout,stderr,code,signal) ->
-          return next(err)  if err
-          if config.sourcemap
-            opts.content = fs.readFileSync(file.attributes.outPath).toString()
-          else
-            opts.content = stdout
-          return next()
+        sass.render commandOpts
 
       else
         # Done, return back to DocPad
