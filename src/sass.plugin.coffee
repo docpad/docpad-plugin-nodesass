@@ -1,15 +1,14 @@
 # Export Plugin
 module.exports = (BasePlugin) ->
   # Requires
-  safeps = require('safeps')
   fs = require('fs')
   {TaskGroup} = require('taskgroup')
   sass = require('node-sass')
 
   # Define Plugin
-  class SassPlugin extends BasePlugin
+  class NodesassPlugin extends BasePlugin
     # Plugin name
-    name: 'sass'
+    name: 'nodesass'
 
     # Plugin config
     # Only on the development environment use expanded, otherwise use compressed
