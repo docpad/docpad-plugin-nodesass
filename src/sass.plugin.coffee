@@ -15,7 +15,9 @@ module.exports = (BasePlugin) ->
     # Only on the development environment use expanded, otherwise use compressed
     config:
       debugInfo: false
+      # sourcemaps are not currently supported by libsass
       #sourcemap: false
+      # outputStyle is not currently supported by libsass
       #outputStyle: 'compressed'
       renderUnderscoreStylesheets: false
       environments:
