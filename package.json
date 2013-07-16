@@ -48,7 +48,8 @@
   },
   "devDependencies": {
     "coffee-script": "~1.6.2",
-    "docpad": ">=6.37 <7"
+    "docpad": ">=6.37 <7",
+    "joe-reporter-console": "~1.2.1"
   },
   "license": "MIT",
   "main": "./out/sass.plugin.js",
