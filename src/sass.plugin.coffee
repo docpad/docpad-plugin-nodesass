@@ -42,7 +42,7 @@ module.exports = (BasePlugin) ->
 
       # Prevent underscore files from being written if desired
       if config.renderUnderscoreStylesheets is false
-        @underscoreStylesheets = docpad.getDatabase().findAllLive(filename: /^_(.*?)\.(?:scss|sass)/)
+        @underscoreStylesheets = docpad.getDatabase().findAllLive(filename: /^_(.*?)\.(?:scss)/)
         @underscoreStylesheets.on 'add', (model) ->
           model.set({
             render: false
@@ -55,8 +55,8 @@ module.exports = (BasePlugin) ->
       config = @config
       {inExtension,outExtension,file} = opts
 
-      # If SASS/SCSS then render
-      if inExtension in ['sass','scss'] and outExtension in ['css',null]
+      # If SCSS then render
+      if inExtension in ['scss'] and outExtension in ['css',null]
         # Fetch useful paths
         fullDirPath = file.get('fullDirPath')
 
