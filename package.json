@@ -1,7 +1,7 @@
 {
   "name": "docpad-plugin-nodesass",
-  "version": "2.0.0",
-  "description": "Adds support for the SASS and SCSS CSS pre-processors to DocPad using node-sass",
+  "version": "2.0.1",
+  "description": "Adds support for the SCSS CSS pre-processor to DocPad using node-sass",
   "homepage": "https://github.com/jking90/docpad-plugin-nodesass",
   "keywords": [
     "docpad",
@@ -11,6 +11,7 @@
     "sass",
     "scss",
     "stylesheets",
+    "preprocessor",
     "css",
     "styles",
     "styling",
