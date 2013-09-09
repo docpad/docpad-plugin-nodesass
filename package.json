@@ -17,10 +17,7 @@
     "styling",
     "node-sass"
   ],
-  "authors": [
-    "Jimmy King <hello@jimmyking.me> (http://jimmyking.me)",
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
-  ],
+  "author": "Jimmy King <hello@jimmyking.me> (http://jimmyking.me)",
   "maintainers": [
     "Jimmy King <hello@jimmyking.me> (https://github.com/jking90)"
   ],
@@ -39,7 +36,9 @@
     "url": "https://github.com/jking90/docpad-plugin-nodesass.git"
   },
   "engines": {
-    "node": ">=0.10.0",
+    "node": ">=0.10"
+  },
+  "peerDependencies": {
     "docpad": ">=6.3 <7"
   },
   "dependencies": {
@@ -48,8 +47,7 @@
   },
   "devDependencies": {
     "coffee-script": "~1.6.2",
-    "docpad": ">=6.37 <7",
-    "joe-reporter-console": "~1.2.1"
+    "docpad": ">=6.37 <7"
   },
   "license": "MIT",
   "main": "./out/sass.plugin.js",
