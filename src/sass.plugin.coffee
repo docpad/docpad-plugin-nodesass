@@ -4,6 +4,8 @@ module.exports = (BasePlugin) ->
   fs = require('fs')
   {TaskGroup} = require('taskgroup')
   sass = require('node-sass')
+  bourbon = require('node-bourbon').includePaths
+  neat = require('node-neat').includePaths
 
   # Define Plugin
   class NodesassPlugin extends BasePlugin
@@ -13,11 +15,13 @@ module.exports = (BasePlugin) ->
     # Plugin config
     # Only on the development environment use expanded, otherwise use compressed
     config:
+      bourbon: false
       debugInfo: false
       # sourcemaps are not currently supported by libsass
       #sourcemap: false
       # outputStyle is not currently supported by libsass
       #outputStyle: 'compressed'
+      neat: false
       renderUnderscoreStylesheets: false
       environments:
         development:
@@ -55,6 +59,9 @@ module.exports = (BasePlugin) ->
       config = @config
       {inExtension,outExtension,file} = opts
 
+      if config.neat
+        config.bourbon = true
+
       # If SCSS then render
       if inExtension in ['scss'] and outExtension in ['css',null]
         # Fetch useful paths
@@ -66,24 +73,32 @@ module.exports = (BasePlugin) ->
           return next()
 
         # Prepare the command and options
-        commandOpts =
+        cmdOpts =
           success: callback
           error: (err)->
             return next(new Error(err))
 
         if fullDirPath
-          commandOpts.includePaths = [fullDirPath]
+          paths = [fullDirPath]
+
+          if config.bourbon
+            paths.push(bourbon)
+          if config.neat
+            paths.push(neat)
+
+          cmdOpts.includePaths = paths
+
         if config.debugInfo
-          commandOpts.sourceComments = config.debugInfo
-          commandOpts.file = file.attributes.fullPath
+          cmdOpts.sourceComments = config.debugInfo
+          cmdOpts.file = file.attributes.fullPath
         else
-          commandOpts.data = opts.content
+          cmdOpts.data = opts.content
         # outputStyle is not currently supported by libsass
         #if config.outputStyle
-          #commandOpts.outputStyle = config.outputStyle
+          #cmdOpts.outputStyle = config.outputStyle
 
         # Spawn the appropriate process to render the content
-        sass.render commandOpts
+        sass.render cmdOpts
 
       else
         # Done, return back to DocPad

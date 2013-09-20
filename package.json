@@ -1,6 +1,6 @@
 {
   "name": "docpad-plugin-nodesass",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "Adds support for the SCSS CSS pre-processor to DocPad using node-sass",
   "homepage": "https://github.com/jking90/docpad-plugin-nodesass",
   "keywords": [
@@ -13,14 +13,10 @@
     "stylesheets",
     "preprocessor",
     "css",
-    "styles",
-    "styling",
-    "node-sass"
+    "node-sass",
+    "bourbon"
   ],
-  "authors": [
-    "Jimmy King <hello@jimmyking.me> (http://jimmyking.me)",
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
-  ],
+  "author": "Jimmy King <hello@jimmyking.me> (http://jimmyking.me)",
   "maintainers": [
     "Jimmy King <hello@jimmyking.me> (https://github.com/jking90)"
   ],
@@ -39,17 +35,20 @@
     "url": "https://github.com/jking90/docpad-plugin-nodesass.git"
   },
   "engines": {
-    "node": ">=0.10.0",
+    "node": ">=0.10"
+  },
+  "peerDependencies": {
     "docpad": ">=6.3 <7"
   },
   "dependencies": {
-    "taskgroup": "~3.1.1",
-    "node-sass": "~0.6.5"
+    "taskgroup": "~3.1.2",
+    "node-sass": "~0.6.6",
+    "node-bourbon": "~1.0.0",
+    "node-neat": "~1.0.0"
   },
   "devDependencies": {
     "coffee-script": "~1.6.2",
-    "docpad": ">=6.37 <7",
-    "joe-reporter-console": "~1.2.1"
+    "docpad": ">=6.37 <7"
   },
   "license": "MIT",
   "main": "./out/sass.plugin.js",
