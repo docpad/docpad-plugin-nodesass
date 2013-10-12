@@ -41,13 +41,13 @@
     "docpad": ">=6.3 <7"
   },
   "dependencies": {
-    "taskgroup": "~3.1.2",
-    "node-sass": "~0.6.6",
+    "taskgroup": "~3.2.3",
+    "node-sass": "~0.6.7",
     "node-bourbon": "~1.0.0",
     "node-neat": "~1.0.0"
   },
   "devDependencies": {
-    "coffee-script": "~1.6.2",
+    "coffee-script": "~1.6.3",
     "docpad": ">=6.37 <7"
   },
   "license": "MIT",
