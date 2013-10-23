@@ -1,5 +1,8 @@
 ## History
 
+- v2.1.1 Oct 23m 2013
+  - Updated [node-sass](https://github.com/andrew/node-sass) to 0.7.0
+
 - v2.1.0 Sept 20, 2013
   - Added support for the [Bourbon](http://bourbon.io/) mixin library, using the [node port](https://github.com/lacroixdesign/node-bourbon)
   - Added support for the [Neat](http://neat.bourbon.io/) semantic grid framework, using the [node port](https://github.com/lacroixdesign/node-neat)
