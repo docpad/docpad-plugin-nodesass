@@ -1,6 +1,6 @@
 {
   "name": "docpad-plugin-nodesass",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Adds support for the SCSS CSS pre-processor to DocPad using node-sass",
   "homepage": "https://github.com/jking90/docpad-plugin-nodesass",
   "keywords": [
@@ -41,10 +41,10 @@
     "docpad": ">=6.3 <7"
   },
   "dependencies": {
-    "taskgroup": "~3.2.3",
-    "node-sass": "~0.7",
+    "taskgroup": "~3.3.6",
+    "node-sass": "~0.8",
     "node-bourbon": "~1.0.0",
-    "node-neat": "~1.0.0"
+    "node-neat": "~1.1.0"
   },
   "devDependencies": {
     "coffee-script": "~1.6.3",
