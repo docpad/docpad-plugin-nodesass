@@ -6,6 +6,7 @@ module.exports = (BasePlugin) ->
   sass = require('node-sass')
   bourbon = require('node-bourbon').includePaths
   neat = require('node-neat').includePaths
+  mkdirp = require('mkdirp')
 
   # Define Plugin
   class NodesassPlugin extends BasePlugin
@@ -17,12 +18,10 @@ module.exports = (BasePlugin) ->
     config:
       bourbon: false
       debugInfo: false
-      # sourcemaps are not currently supported by libsass
-      #sourcemap: false
-      # outputStyle is not currently supported by libsass
       #outputStyle: 'compressed'
       neat: false
       renderUnderscoreStylesheets: false
+      sourceMap: false
       environments:
         development:
           debugInfo: 'normal'
@@ -68,7 +67,20 @@ module.exports = (BasePlugin) ->
         fullDirPath = file.get('fullDirPath')
 
         # Define callback fn
-        callback = (css) ->
+        callback = (css, map) ->
+          if map
+            mkdirp file.get('outDirPath'), (err)->
+              if err
+                console.log err
+
+            path = file.get('outPath') + '.map'
+            fs.writeFile path, map, (err)->
+              if err
+                console.log err
+
+            fileName = path.split('/').pop()
+            css = '/*# sourceMappingURL=./' + fileName + ' */\n' + css
+
           opts.content = css
           return next()
 
@@ -88,7 +100,7 @@ module.exports = (BasePlugin) ->
 
           cmdOpts.includePaths = paths
 
-        if config.debugInfo
+        if config.debugInfo and config.debugInfo isnt 'none'
           cmdOpts.sourceComments = config.debugInfo
           cmdOpts.file = file.attributes.fullPath
         else
@@ -96,6 +108,9 @@ module.exports = (BasePlugin) ->
         # outputStyle is not currently supported by libsass
         #if config.outputStyle
           #cmdOpts.outputStyle = config.outputStyle
+
+        if config.sourceMap
+          cmdOpts.sourceMap = config.sourceMap
 
         # Spawn the appropriate process to render the content
         sass.render cmdOpts

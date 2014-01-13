@@ -1,6 +1,10 @@
 ## History
 
-- v2.1.1 Oct 23m 2013
+- v2.2.0 Jan 11, 2014
+  - Updated [node-sass](https://github.com/andrew/node-sass) to 0.8.0
+  - Added support for sourcemaps
+
+- v2.1.1 Oct 23, 2013
   - Updated [node-sass](https://github.com/andrew/node-sass) to 0.7.0
 
 - v2.1.0 Sept 20, 2013
