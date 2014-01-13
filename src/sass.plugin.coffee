@@ -68,8 +68,6 @@ module.exports = (BasePlugin) ->
 
         # Define callback fn
         callback = (css, map) ->
-          opts.content = css
-
           if map
             mkdirp file.get('outDirPath'), (err)->
               if err
@@ -80,6 +78,10 @@ module.exports = (BasePlugin) ->
               if err
                 console.log err
 
+            fileName = path.split('/').pop()
+            css = '/*# sourceMappingURL=./' + fileName + ' */\n' + css
+
+          opts.content = css
           return next()
 
         # Prepare the command and options
@@ -98,7 +100,7 @@ module.exports = (BasePlugin) ->
 
           cmdOpts.includePaths = paths
 
-        if config.debugInfo
+        if config.debugInfo and config.debugInfo isnt 'none'
           cmdOpts.sourceComments = config.debugInfo
           cmdOpts.file = file.attributes.fullPath
         else
@@ -106,6 +108,7 @@ module.exports = (BasePlugin) ->
         # outputStyle is not currently supported by libsass
         #if config.outputStyle
           #cmdOpts.outputStyle = config.outputStyle
+
         if config.sourceMap
           cmdOpts.sourceMap = config.sourceMap
 
