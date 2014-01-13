@@ -36,7 +36,7 @@ If set to `true`, the [Bourbon](http://bourbon.io/) mixin library will be availa
 debugInfo: false|'normal'|'map'
 ```
 
-`normal` will print comments in the output css that indicates the source file name and line number. `map` will produce a file the same way `--debug-info` will in the Sass CLI. Using either of these options instead of `none` will prevent you from being able to run any other process on the file (e.g. `FILE.css.scss.eco`), because `debugInfo` requires passing an actual file instead of `stdin`.
+`normal` will print comments in the output css that indicates the source file name and line number. `map` will produce a sourcemap. Using either of these options instead of `none` will prevent you from being able to run any other process on the file (e.g. `FILE.css.scss.eco`), because `debugInfo` requires passing an actual file instead of `stdin`.
 
 ### Neat
 
