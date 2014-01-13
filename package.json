@@ -44,7 +44,8 @@
     "taskgroup": "~3.3.6",
     "node-sass": "~0.8",
     "node-bourbon": "~1.0.0",
-    "node-neat": "~1.1.0"
+    "node-neat": "~1.1.0",
+    "mkdirp": "~0.3.5"
   },
   "devDependencies": {
     "coffee-script": "~1.6.3",
