@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "taskgroup": "~3.3.6",
-    "node-sass": "~0.8",
+    "node-sass": "~0.8.1",
     "node-bourbon": "~1.0.0",
     "node-neat": "~1.1.0",
     "mkdirp": "~0.3.5"

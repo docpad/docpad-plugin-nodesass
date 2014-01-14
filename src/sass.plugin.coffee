@@ -14,7 +14,6 @@ module.exports = (BasePlugin) ->
     name: 'nodesass'
 
     # Plugin config
-    # Only on the development environment use expanded, otherwise use compressed
     config:
       bourbon: false
       debugInfo: false
@@ -22,9 +21,6 @@ module.exports = (BasePlugin) ->
       neat: false
       renderUnderscoreStylesheets: false
       sourceMap: false
-      environments:
-        development:
-          debugInfo: 'normal'
 
     # Generate Before
     generateBefore: (opts,next) ->
@@ -69,16 +65,20 @@ module.exports = (BasePlugin) ->
         # Define callback fn
         callback = (css, map) ->
           if map
+            path = file.get('outPath') + '.map'
+            fileName = path.split('/').pop()
+
+            # Create dir for sourcemap
             mkdirp file.get('outDirPath'), (err)->
               if err
                 console.log err
+              else
+                # Write sourcemap
+                fs.writeFile path, map, (err)->
+                  if err
+                    console.log err
 
-            path = file.get('outPath') + '.map'
-            fs.writeFile path, map, (err)->
-              if err
-                console.log err
-
-            fileName = path.split('/').pop()
+            # Include sourcemap URL in CSS file
             css = '/*# sourceMappingURL=./' + fileName + ' */\n' + css
 
           opts.content = css

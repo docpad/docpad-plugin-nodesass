@@ -1,5 +1,9 @@
 ## History
 
+- v2.2.1 Jan 14, 2014
+  - Fixed [#4](https://github.com/jking90/docpad-plugin-nodesass/issues/4)
+  - Updated [node-sass](https://github.com/andrew/node-sass) to 0.8.1
+
 - v2.2.0 Jan 13, 2014
   - Updated [node-sass](https://github.com/andrew/node-sass) to 0.8.0
   - Added support for sourcemaps
