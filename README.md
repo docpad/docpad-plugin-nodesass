@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/jking90/docpad-plugin-nodesass.png?branch=master)](https://travis-ci.org/jking90/docpad-plugin-nodesass)
 [![Gittip donate button](http://img.shields.io/gittip/jking90.png)](https://www.gittip.com/jking90/ "Donate weekly to this project using Gittip")
 
-Adds support for the [SCSS](http://sass-lang.com/) CSS pre-processor to [DocPad](https://docpad.org).
+> Adds support for the [SCSS](http://sass-lang.com/) CSS pre-processor to [DocPad](https://docpad.org).
 
 The indented `.sass` syntax is not supported by [node-sass](https://github.com/andrew/node-sass), so it is not supported by this plugin.
 
@@ -20,7 +20,7 @@ npm install --save docpad-plugin-nodesass
 
 
 ### Output Style
-This option is not supported by [`libsass`](https://github.com/hcatlin/libsass) (and neither are sourcemaps).
+This option is not supported by [`libsass`](https://github.com/hcatlin/libsass).
 
 ### Bourbon
 
