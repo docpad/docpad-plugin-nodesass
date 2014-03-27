@@ -105,9 +105,9 @@ module.exports = (BasePlugin) ->
           cmdOpts.file = file.attributes.fullPath
         else
           cmdOpts.data = opts.content
-        # outputStyle is not currently supported by libsass
-        #if config.outputStyle
-          #cmdOpts.outputStyle = config.outputStyle
+
+        if config.outputStyle
+          cmdOpts.outputStyle = config.outputStyle
 
         if config.sourceMap
           cmdOpts.sourceMap = config.sourceMap
