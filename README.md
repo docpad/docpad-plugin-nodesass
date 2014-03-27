@@ -20,7 +20,9 @@ npm install --save docpad-plugin-nodesass
 
 
 ### Output Style
-This option is not supported by [`libsass`](https://github.com/hcatlin/libsass).
+```coffeescript
+outputStyle: 'nested'|'compressed'
+```
 
 ### Bourbon
 
