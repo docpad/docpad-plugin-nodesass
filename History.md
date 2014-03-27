@@ -1,7 +1,7 @@
 ## History
 
 - v2.3.0 Mar 27, 2014
-  - Added support for `outputStyle` thanks to @chrishale
+  - Added support for `outputStyle` thanks to [@chrishale](https://github.com/chrishale)
   - Updated [node-sass](https://github.com/andrew/node-sass) to 0.8.4
 
 - v2.2.1 Jan 14, 2014
