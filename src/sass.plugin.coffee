@@ -17,8 +17,9 @@ module.exports = (BasePlugin) ->
     config:
       bourbon: false
       debugInfo: false
-      #outputStyle: 'compressed'
+      #imagePath:
       neat: false
+      #outputStyle: 'compressed'
       renderUnderscoreStylesheets: false
       sourceMap: false
 
@@ -105,6 +106,9 @@ module.exports = (BasePlugin) ->
           cmdOpts.file = file.attributes.fullPath
         else
           cmdOpts.data = opts.content
+
+        if config.imagePath
+          cmdOpts.imagePath = config.imagePath
 
         if config.outputStyle
           cmdOpts.outputStyle = config.outputStyle
