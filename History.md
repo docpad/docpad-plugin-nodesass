@@ -1,6 +1,7 @@
 ## History
 
-- v2.4.0 June 6, 2014
+- v2.4.0 June 9, 2014
+  - Added support for imagePath option
   - Updated [node-sass](https://github.com/andrew/node-sass) to [0.9.2](https://github.com/andrew/node-sass/releases/tag/v0.9.2)
   - Updated [node-bourbon](https://github.com/lacroixdesign/node-bourbon) to [1.2.3](https://github.com/lacroixdesign/node-bourbon/releases/tag/v1.2.3)
   - Updated [node-neat](https://github.com/lacroixdesign/node-neat) to [1.3.0](https://github.com/lacroixdesign/node-neat/releases/tag/v1.3.0)
