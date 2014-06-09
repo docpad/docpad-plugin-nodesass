@@ -1,7 +1,8 @@
 module.exports = {
-	plugins: {
-		nodesass: {
-			outputStyle: 'compressed'
-		}
-	}
+  plugins: {
+    nodesass: {
+      imagePath: '/path/to/images',
+      outputStyle: 'compressed'
+    }
+  }
 };

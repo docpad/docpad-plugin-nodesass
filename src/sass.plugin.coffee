@@ -17,8 +17,9 @@ module.exports = (BasePlugin) ->
     config:
       bourbon: false
       debugInfo: false
-      #outputStyle: 'compressed'
+      #imagePath:
       neat: false
+      #outputStyle: 'compressed'
       renderUnderscoreStylesheets: false
       sourceMap: false
 
@@ -41,7 +42,7 @@ module.exports = (BasePlugin) ->
 
       # Prevent underscore files from being written if desired
       if config.renderUnderscoreStylesheets is false
-        @underscoreStylesheets = docpad.getDatabase().findAllLive(filename: /^_(.*?)\.(?:scss)/)
+        @underscoreStylesheets = docpad.getDatabase().findAllLive(filename: /^_(.*?)\.(?:scss|sass)/)
         @underscoreStylesheets.on 'add', (model) ->
           model.set({
             render: false
@@ -57,8 +58,8 @@ module.exports = (BasePlugin) ->
       if config.neat
         config.bourbon = true
 
-      # If SCSS then render
-      if inExtension in ['scss'] and outExtension in ['css',null]
+      # If SASS/SCSS then render
+      if inExtension in ['sass', 'scss'] and outExtension in ['css',null]
         # Fetch useful paths
         fullDirPath = file.get('fullDirPath')
 
@@ -105,6 +106,9 @@ module.exports = (BasePlugin) ->
           cmdOpts.file = file.attributes.fullPath
         else
           cmdOpts.data = opts.content
+
+        if config.imagePath
+          cmdOpts.imagePath = config.imagePath
 
         if config.outputStyle
           cmdOpts.outputStyle = config.outputStyle
