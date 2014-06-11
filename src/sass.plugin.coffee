@@ -55,9 +55,6 @@ module.exports = (BasePlugin) ->
       config = @config
       {inExtension,outExtension,file} = opts
 
-      if config.neat
-        config.bourbon = true
-
       # If SASS/SCSS then render
       if inExtension in ['sass', 'scss'] and outExtension in ['css',null]
         # Fetch useful paths
@@ -95,9 +92,11 @@ module.exports = (BasePlugin) ->
           paths = [fullDirPath]
 
           if config.bourbon
-            paths.push(bourbon)
+            for path in bourbon
+              paths.push(path)
           if config.neat
-            paths.push(neat)
+            for path in neat
+              paths.push(path)
 
           cmdOpts.includePaths = paths
 
