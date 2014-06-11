@@ -1,5 +1,9 @@
 ## History
 
+- v2.4.1 June 11, 2014
+  - Fixed [#9](https://github.com/jking90/docpad-plugin-nodesass/issues/9)
+  - Added tests for bourbon and neat
+
 - v2.4.0 June 9, 2014
   - Added support for imagePath option
   - Updated [node-sass](https://github.com/andrew/node-sass) to [0.9.2](https://github.com/andrew/node-sass/releases/tag/v0.9.2)

@@ -1,0 +1,10 @@
+@import "bourbon";
+@import "neat";
+
+section {
+  @include linear-gradient(to top, red, orange);
+}
+
+div {
+  @include span-columns(6);
+}
