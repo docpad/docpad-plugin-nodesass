@@ -3,6 +3,7 @@ module.exports = {
     nodesass: {
       imagePath: '/path/to/images',
       neat: true,
+      precision: 3,
       outputStyle: 'compressed'
     }
   }

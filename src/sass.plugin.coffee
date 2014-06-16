@@ -20,6 +20,7 @@ module.exports = (BasePlugin) ->
       #imagePath:
       neat: false
       #outputStyle: 'compressed'
+      precision: 5
       renderUnderscoreStylesheets: false
       sourceMap: false
 
@@ -99,6 +100,8 @@ module.exports = (BasePlugin) ->
               paths.push(path)
 
           cmdOpts.includePaths = paths
+
+        cmdOpts.precision = config.precision
 
         if config.debugInfo and config.debugInfo isnt 'none'
           cmdOpts.sourceComments = config.debugInfo

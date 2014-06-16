@@ -24,16 +24,22 @@ npm install --save docpad-plugin-nodesass
 outputStyle: 'nested'|'compressed'
 ```
 
-`outputStyle` is a `String` to determine how the final CSS should be rendered. Its value should be one of `'nested'` or `'compressed'`.
-[`'expanded'` and `'compact'` are not currently supported by [libsass](https://github.com/hcatlin/libsass)]
+`outputStyle` is a `String` to determine how the final CSS should be rendered. Its value should be one of `'nested'` or `'compressed'`. `'expanded'` and `'compact'` are not currently supported by [libsass](https://github.com/hcatlin/libsass).
 
 
-## Image Path
+### Image Path
 ```coffeescript
 imagePath: '/path/to/images'
 ```
 
 `imagePath` is a `String` that represents the public image path. When using the `image-url()` function in a stylesheet, this path will be prepended to the path you supply. eg. Given an `imagePath` of `/path/to/images`, `background-image: image-url('image.png')` will compile to `background-image: url("/path/to/images/image.png")`
+
+### Precision
+```coffeescript
+precision: 5
+```
+
+`precision` is a `Number` that will be used to determine how many digits after the decimal will be allowed. For instance, if you had a decimal number of `1.23456789` and a precision of `5`, the result will be `1.23457` in the final CSS.
 
 ### Bourbon
 
