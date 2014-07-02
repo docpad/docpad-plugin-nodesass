@@ -1,5 +1,10 @@
 ## History
 
+- v2.4.3 July 2, 2014
+  - Fixed [#11](https://github.com/jking90/docpad-plugin-nodesass/issues/11)
+  - Removed mkdirp as a dependency
+  - Switched from writing `.map` file to disk to including it as a data URI
+
 - v2.4.2 June 16, 2014
   - Implemented `precision` option (fixed [#10](https://github.com/jking90/docpad-plugin-nodesass/issues/10))
   - Updated [node-sass](https://github.com/andrew/node-sass) to [0.9.3](https://github.com/andrew/node-sass/releases/tag/v0.9.3)
