@@ -1,7 +1,7 @@
 ## History
 
 - v2.4.3 July 2, 2014
-  - Fixed [#11](https://github.com/jking90/docpad-plugin-nodesass/issues/11)
+  - Fixed [#15](https://github.com/jking90/docpad-plugin-nodesass/issues/15)
   - Removed mkdirp as a dependency
   - Switched from writing `.map` file to disk to including it as a data URI
 
