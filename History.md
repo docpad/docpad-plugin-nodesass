@@ -1,5 +1,8 @@
 ## History
 
+- v2.4.4 July 2, 2014
+  - Removed `console.log`
+
 - v2.4.3 July 2, 2014
   - Fixed [#15](https://github.com/jking90/docpad-plugin-nodesass/issues/15)
   - Removed mkdirp as a dependency
