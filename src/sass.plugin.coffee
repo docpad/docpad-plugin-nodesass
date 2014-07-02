@@ -6,7 +6,6 @@ module.exports = (BasePlugin) ->
   sass = require('node-sass')
   bourbon = require('node-bourbon').includePaths
   neat = require('node-neat').includePaths
-  mkdirp = require('mkdirp')
 
   # Define Plugin
   class NodesassPlugin extends BasePlugin
@@ -61,24 +60,26 @@ module.exports = (BasePlugin) ->
         # Fetch useful paths
         fullDirPath = file.get('fullDirPath')
 
+        # Read sources & return content
+        getSourcesContent = (sources) ->
+          sourcesContent = []
+          i = 0
+
+          while i < sources.length
+            source = fullDirPath + '/' + sources[i]
+            sourcesContent[i] = fs.readFileSync(source,
+              encoding: 'utf8'
+            )
+            i++
+          sourcesContent
+
         # Define callback fn
         callback = (css, map) ->
           if map
-            path = file.get('outPath') + '.map'
-            fileName = path.split('/').pop()
-
-            # Create dir for sourcemap
-            mkdirp file.get('outDirPath'), (err)->
-              if err
-                console.log err
-              else
-                # Write sourcemap
-                fs.writeFile path, map, (err)->
-                  if err
-                    console.log err
-
-            # Include sourcemap URL in CSS file
-            css = '/*# sourceMappingURL=./' + fileName + ' */\n' + css
+            map = JSON.parse(map)
+            map.sourcesContent = getSourcesContent(map.sources);
+            sourceMap = new Buffer(JSON.stringify(map)).toString('base64');
+            css = css.replace(/\/\*# sourceMappingURL=.*\*\//, '/*# sourceMappingURL=data:application/json;base64,' + sourceMap + '*/')
 
           opts.content = css
           return next()
