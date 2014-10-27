@@ -1,5 +1,8 @@
 ## History
 
+- v2.5.x October 25th, 2014
+  - Updated dependencies
+
 - v2.4.4 July 2, 2014
   - Removed `console.log`
 
