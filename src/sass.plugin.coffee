@@ -22,6 +22,7 @@ module.exports = (BasePlugin) ->
       precision: 5
       renderUnderscoreStylesheets: false
       sourceMap: false
+      includePaths: []
 
     # Generate Before
     generateBefore: (opts,next) ->
@@ -91,7 +92,7 @@ module.exports = (BasePlugin) ->
             return next(new Error(err))
 
         if fullDirPath
-          paths = [fullDirPath]
+          paths = config.includePaths.concat([fullDirPath])
 
           if config.bourbon
             for path in bourbon
