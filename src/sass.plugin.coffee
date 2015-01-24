@@ -54,6 +54,8 @@ module.exports = (BasePlugin) ->
     render: (opts,next) ->
       # Prepare
       config = @config
+      paths = []
+
       {inExtension,outExtension,file} = opts
 
       # If SASS/SCSS then render
@@ -92,7 +94,7 @@ module.exports = (BasePlugin) ->
             return next(new Error(err))
 
         if fullDirPath
-          paths = config.includePaths.concat([fullDirPath])
+          paths.push([fullDirPath])
 
           if config.bourbon
             for path in bourbon
@@ -101,8 +103,7 @@ module.exports = (BasePlugin) ->
             for path in neat
               paths.push(path)
 
-          cmdOpts.includePaths = paths
-
+        cmdOpts.includePaths = config.includePaths.concat(paths)
         cmdOpts.precision = config.precision
 
         if config.debugInfo and config.debugInfo isnt 'none'
