@@ -1,5 +1,9 @@
 ## History
 
+- v2.5.0 Jan 26, 2015
+  - Updated [node-sass](https://github.com/sass/node-sass) to [v1.2.3](https://github.com/sass/node-sass/releases/tag/v1.2.3) (#22, thanks @mbarlock)
+  - Added includePaths option, fixes #24 (#23, thanks @mbarlock)
+
 - v2.4.4 July 2, 2014
   - Removed `console.log`
 
