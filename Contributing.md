@@ -33,4 +33,6 @@ cake watch
 
 ## Testing
 
-No tests yet!
+``` bash
+cake test
+```
