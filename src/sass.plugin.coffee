@@ -94,7 +94,7 @@ module.exports = (BasePlugin) ->
             return next(new Error(err))
 
         if fullDirPath
-          paths.push([fullDirPath])
+          paths.push(fullDirPath)
 
           if config.bourbon
             for path in bourbon

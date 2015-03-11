@@ -41,6 +41,12 @@ precision: 5
 
 `precision` is a `Number` that will be used to determine how many digits after the decimal will be allowed. For instance, if you had a decimal number of `1.23456789` and a precision of `5`, the result will be `1.23457` in the final CSS.
 
+### includePaths
+```coffeescript
+includePaths: [ '/path/to/include', '/another/path/to/include]
+```
+`includePaths` is an `Array` of path `String`s to look for any `@import`ed files. It is recommended that you use this option if you are using the `data` option and have **any** `@import` directives, as otherwise [libsass] may not find your depended-on files.
+
 ### Bourbon
 
 ```coffeescript
