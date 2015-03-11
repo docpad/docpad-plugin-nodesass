@@ -1,5 +1,8 @@
 ## History
 
+- v2.5.1 Mar 11, 2015
+  - Fixed includePaths-related bug (#25, thanks @mbarlock)
+
 - v2.5.0 Jan 26, 2015
   - Updated [node-sass](https://github.com/sass/node-sass) to [v1.2.3](https://github.com/sass/node-sass/releases/tag/v1.2.3) (#22, thanks @mbarlock)
   - Added includePaths option, fixes #24 (#23, thanks @mbarlock)
