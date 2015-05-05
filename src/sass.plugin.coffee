@@ -80,8 +80,8 @@ module.exports = (BasePlugin) ->
         callback = (css, map) ->
           if map
             map = JSON.parse(map)
-            map.sourcesContent = getSourcesContent(map.sources);
-            sourceMap = new Buffer(JSON.stringify(map)).toString('base64');
+            map.sourcesContent = getSourcesContent(map.sources)
+            sourceMap = new Buffer(JSON.stringify(map)).toString('base64')
             css = css.replace(/\/\*# sourceMappingURL=.*\*\//, '/*# sourceMappingURL=data:application/json;base64,' + sourceMap + '*/')
 
           opts.content = css
@@ -90,7 +90,7 @@ module.exports = (BasePlugin) ->
         # Prepare the command and options
         cmdOpts =
           success: callback
-          error: (err)->
+          error: (err) ->
             return next(new Error(err))
 
         if fullDirPath
