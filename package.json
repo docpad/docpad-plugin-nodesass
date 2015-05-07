@@ -1,6 +1,6 @@
 {
   "name": "docpad-plugin-nodesass",
-  "version": "2.5.1",
+  "version": "2.6.0",
   "description": "Adds support for the Sass CSS pre-processor to DocPad using node-sass",
   "homepage": "https://github.com/jking90/docpad-plugin-nodesass",
   "keywords": [
@@ -42,20 +42,28 @@
   },
   "dependencies": {
     "taskgroup": "~3.4.0",
-    "node-sass": "~1.2.3",
-    "node-bourbon": "~1.2.3",
-    "node-neat": "~1.3.0"
+    "node-sass": "~2.1.1",
+    "node-bourbon": "~4.2.2",
+    "node-neat": "~1.4.2"
   },
   "devDependencies": {
-    "coffee-script": "~1.7.1",
+    "coffee-script": "^1.9.2",
+    "coffeelint": "^1.9.6",
     "docpad": ">=6.37 <7",
-    "joe": "^1.4.0",
-    "joe-reporter-console": "^1.2.1",
-    "chai": "^1.9.1"
+    "joe": "^1.6.0",
+    "joe-reporter-console": "^1.2.1"
   },
   "license": "MIT",
   "main": "./out/sass.plugin.js",
   "scripts": {
+    "clean": "./node_modules/.bin/cake clean",
+    "setup": "./node_modules/.bin/cake setup",
+    "compile": "./node_modules/.bin/cake compile",
+    "watch": "./node_modules/.bin/cake watch",
+    "verify": "./node_modules/.bin/cake verify",
+    "meta": "./node_modules/.bin/cake meta",
+    "prepare": "./node_modules/.bin/cake prepare",
+    "release": "./node_modules/.bin/cake release",
     "test": "node ./out/sass.test.js"
   }
 }
