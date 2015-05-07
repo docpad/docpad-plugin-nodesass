@@ -1,21 +1,33 @@
-lib-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
-*.swp
+# 27 March 2015
+# https://github.com/bevry/base
 
+# Temp Files
+**/.docpad.db
+**/out.*
+**/*.log
+**/*.cpuprofile
+**/*.heapsnapshot
+
+# Build Files
+build/
+components/
+bower_components/
+node_modules/
+out/
+coffeejs/
+es5/
+
+# Editor Caches
+.c9/
+
+# Private Files
+.env
+.idea
+.cake_task_cache
+
+
+# =====================================
+# CUSTOM
 .DS_Store
 
-pids
-logs
-results
-
-node_modules
-npm-debug.log
-
-test/out/
-out/
+# None
