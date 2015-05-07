@@ -16,13 +16,9 @@ module.exports = (BasePlugin) ->
     config:
       bourbon: false
       debugInfo: false
-      #imagePath:
       neat: false
-      #outputStyle: 'compressed'
-      precision: 5
       renderUnderscoreStylesheets: false
       sourceMap: false
-      includePaths: []
 
     # Generate Before
     generateBefore: (opts,next) ->
@@ -51,7 +47,7 @@ module.exports = (BasePlugin) ->
           })
 
     # Render some content
-    render: (opts,next) ->
+    render: (opts, next) ->
       # Prepare
       config = @config
       paths = []
@@ -76,22 +72,11 @@ module.exports = (BasePlugin) ->
             i++
           sourcesContent
 
-        # Define callback fn
-        callback = (css, map) ->
-          if map
-            map = JSON.parse(map)
-            map.sourcesContent = getSourcesContent(map.sources)
-            sourceMap = new Buffer(JSON.stringify(map)).toString('base64')
-            css = css.replace(/\/\*# sourceMappingURL=.*\*\//, '/*# sourceMappingURL=data:application/json;base64,' + sourceMap + '*/')
-
-          opts.content = css
-          return next()
-
         # Prepare the command and options
-        cmdOpts =
-          success: callback
-          error: (err) ->
-            return next(new Error(err))
+        cmdOpts = {}
+
+        for prop of config.options
+          cmdOpts[prop] = config.options[prop]
 
         if fullDirPath
           paths.push(fullDirPath)
@@ -103,8 +88,7 @@ module.exports = (BasePlugin) ->
             for path in neat
               paths.push(path)
 
-        cmdOpts.includePaths = config.includePaths.concat(paths)
-        cmdOpts.precision = config.precision
+        cmdOpts.includePaths = if cmdOpts.includePaths then cmdOpts.includePaths.concat(paths) else paths
 
         if config.debugInfo and config.debugInfo isnt 'none'
           cmdOpts.sourceComments = config.debugInfo
@@ -112,18 +96,18 @@ module.exports = (BasePlugin) ->
         else
           cmdOpts.data = opts.content
 
-        if config.imagePath
-          cmdOpts.imagePath = config.imagePath
-
-        if config.outputStyle
-          cmdOpts.outputStyle = config.outputStyle
-
-        if config.sourceMap
-          cmdOpts.sourceMap = config.sourceMap
-
         # Spawn the appropriate process to render the content
-        sass.render cmdOpts
+        result = sass.renderSync cmdOpts
 
+        css = result.css
+
+        if result.map and result.map.sources
+          console.log result.map
+          map.sourcesContent = getSourcesContent(map.sources)
+          sourceMap = new Buffer(JSON.stringify(map)).toString('base64')
+          css = css.replace(/\/\*# sourceMappingURL=.*\*\//, '/*# sourceMappingURL=data:application/json;base64,' + sourceMap + '*/')
+
+        opts.content = css
+        next()
       else
-        # Done, return back to DocPad
-        return next()
+        next()
