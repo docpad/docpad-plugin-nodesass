@@ -26,26 +26,8 @@ outputStyle: 'nested'|'compressed'
 
 `outputStyle` is a `String` to determine how the final CSS should be rendered. Its value should be one of `'nested'` or `'compressed'`. `'expanded'` and `'compact'` are not currently supported by [libsass](https://github.com/hcatlin/libsass).
 
-
-### Image Path
-```coffeescript
-imagePath: '/path/to/images'
-```
-
-`imagePath` is a `String` that represents the public image path. When using the `image-url()` function in a stylesheet, this path will be prepended to the path you supply. eg. Given an `imagePath` of `/path/to/images`, `background-image: image-url('image.png')` will compile to `background-image: url("/path/to/images/image.png")`
-
-### Precision
-```coffeescript
-precision: 5
-```
-
-`precision` is a `Number` that will be used to determine how many digits after the decimal will be allowed. For instance, if you had a decimal number of `1.23456789` and a precision of `5`, the result will be `1.23457` in the final CSS.
-
-### includePaths
-```coffeescript
-includePaths: [ '/path/to/include', '/another/path/to/include]
-```
-`includePaths` is an `Array` of path `String`s to look for any `@import`ed files. It is recommended that you use this option if you are using the `data` option and have **any** `@import` directives, as otherwise [libsass] may not find your depended-on files.
+### Options
+An object that you can use to pass options to node-sass
 
 ### Bourbon
 
