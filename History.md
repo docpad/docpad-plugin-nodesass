@@ -1,5 +1,8 @@
 ## History
 
+- v2.7.0
+  - Updated node-sass to v3.0.0 (#31, thanks @mbarlock)
+
 - v2.6.0
   - Updated node-sass to v2.1.1 (#30, thanks @mbarlock)
 
