@@ -102,7 +102,7 @@ module.exports = (BasePlugin) ->
         css = result.css
 
         if result.map and result.map.sources
-          console.log result.map
+          map = result.map
           map.sourcesContent = getSourcesContent(map.sources)
           sourceMap = new Buffer(JSON.stringify(map)).toString('base64')
           css = css.replace(/\/\*# sourceMappingURL=.*\*\//, '/*# sourceMappingURL=data:application/json;base64,' + sourceMap + '*/')
