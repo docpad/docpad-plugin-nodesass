@@ -1,4 +1,6 @@
 ## History
+- v2.7.2
+  - Fixed typo in source maps (#32)
 
 - v2.7.0
   - Updated node-sass to v3.0.0 (#31, thanks @mbarlock)
