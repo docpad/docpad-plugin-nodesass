@@ -27,7 +27,7 @@ outputStyle: 'nested'|'compressed'
 `outputStyle` is a `String` to determine how the final CSS should be rendered. Its value should be one of `'nested'` or `'compressed'`. `'expanded'` and `'compact'` are not currently supported by [libsass](https://github.com/hcatlin/libsass).
 
 ### Options
-An object that you can use to pass options to node-sass
+An object that you can use to [pass options to node-sass](https://github.com/sass/node-sass#options)
 
 ### Bourbon
 
