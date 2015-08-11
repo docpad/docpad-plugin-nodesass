@@ -41,7 +41,6 @@
     "docpad": ">=6.3 <7"
   },
   "dependencies": {
-    "taskgroup": "~3.4.0",
     "node-sass": "~3.0.0",
     "node-bourbon": "~4.2.2",
     "node-neat": "~1.4.2"

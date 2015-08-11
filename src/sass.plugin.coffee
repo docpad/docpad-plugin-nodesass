@@ -2,7 +2,6 @@
 module.exports = (BasePlugin) ->
   # Requires
   fs = require('fs')
-  {TaskGroup} = require('taskgroup')
   sass = require('node-sass')
   bourbon = require('node-bourbon').includePaths
   neat = require('node-neat').includePaths
@@ -19,17 +18,6 @@ module.exports = (BasePlugin) ->
       neat: false
       renderUnderscoreStylesheets: false
       sourceMap: false
-
-    # Generate Before
-    generateBefore: (opts,next) ->
-      # Prepare
-      config = @config
-
-      # Group
-      tasks = new TaskGroup().setConfig(concurrency:0).once('complete',next)
-
-      # Fire tasks
-      tasks.run()
 
     # Prevent underscore
     extendCollections: (opts) ->
