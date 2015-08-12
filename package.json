@@ -41,9 +41,10 @@
     "docpad": ">=6.3 <7"
   },
   "dependencies": {
-    "node-sass": "~3.0.0",
+    "async": "^1.4.2",
     "node-bourbon": "~4.2.2",
-    "node-neat": "~1.4.2"
+    "node-neat": "~1.4.2",
+    "node-sass": "~3.0.0"
   },
   "devDependencies": {
     "coffee-script": "^1.9.2",

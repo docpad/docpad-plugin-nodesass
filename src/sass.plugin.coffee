@@ -5,6 +5,7 @@ module.exports = (BasePlugin) ->
   sass = require('node-sass')
   bourbon = require('node-bourbon').includePaths
   neat = require('node-neat').includePaths
+  async = require('async')
 
   # Define Plugin
   class NodesassPlugin extends BasePlugin
@@ -48,17 +49,10 @@ module.exports = (BasePlugin) ->
         fullDirPath = file.get('fullDirPath')
 
         # Read sources & return content
-        getSourcesContent = (sources) ->
-          sourcesContent = []
-          i = 0
-
-          while i < sources.length
-            source = fullDirPath + '/' + sources[i]
-            sourcesContent[i] = fs.readFileSync(source,
-              encoding: 'utf8'
-            )
-            i++
-          sourcesContent
+        getSourceContent = (source, next) ->
+          fs.readFile path.join(fullDirPath, source), {encoding: 'utf8'}, next
+        getSourcesContent = (sources, done) ->
+          async.map sources.map(extendSourcePath), getSourceContent, done
 
         # Prepare the command and options
         cmdOpts = {}
@@ -85,17 +79,24 @@ module.exports = (BasePlugin) ->
           cmdOpts.data = opts.content
 
         # Spawn the appropriate process to render the content
-        result = sass.renderSync cmdOpts
+        sass.render cmdOpts, (err, result) ->
+          return next(err) if err
 
-        css = result.css
+          css = result.css.toString() # sass.render gives a Buffer object, but sourcemaps and other docpad plugins (partials) require strings
 
-        if result.map and result.map.sources
-          map = result.map
-          map.sourcesContent = getSourcesContent(map.sources)
-          sourceMap = new Buffer(JSON.stringify(map)).toString('base64')
-          css = css.replace(/\/\*# sourceMappingURL=.*\*\//, '/*# sourceMappingURL=data:application/json;base64,' + sourceMap + '*/')
+          if result.map and result.map.sources
+            map = result.map
+            getSourcesContent map.sources, (err, sourcesContent) ->
+              return next(err) if err
 
-        opts.content = css
-        next()
+              map.sourcesContent = sourcesContent
+              sourceMap = new Buffer(JSON.stringify(map)).toString('base64')
+              css = css.replace(/\/\*# sourceMappingURL=.*\*\//, '/*# sourceMappingURL=data:application/json;base64,' + sourceMap + '*/')
+
+              opts.content = css
+              next()
+          else
+            opts.content = css
+            next()
       else
         next()
