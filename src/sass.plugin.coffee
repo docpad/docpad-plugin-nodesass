@@ -3,6 +3,7 @@ module.exports = (BasePlugin) ->
   # Requires
   fs = require('fs')
   sass = require('node-sass')
+  colors = require('colors')
   bourbon = require('node-bourbon').includePaths
   neat = require('node-neat').includePaths
   async = require('async')
@@ -19,6 +20,12 @@ module.exports = (BasePlugin) ->
       neat: false
       renderUnderscoreStylesheets: false
       sourceMap: false
+
+    # Warn about use of deprecated options
+    docpadReady: ->
+      config = @config
+      if config.bourbon or config.neat
+        console.warn('nodesass: ' + 'The Bourbon and Neat options are deprecated and will be removed in the next major version. Please use includePaths instead (example in README.md)'.red)
 
     # Prevent underscore
     extendCollections: (opts) ->

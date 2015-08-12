@@ -29,14 +29,6 @@ outputStyle: 'nested'|'compressed'
 ### Options
 An object that you can use to [pass options to node-sass](https://github.com/sass/node-sass#options)
 
-### Bourbon
-
-```coffeescript
-bourbon: false|true
-```
-
-If set to `true`, the [Bourbon](http://bourbon.io/) mixin library will be available for use. (Using the [node port](https://github.com/lacroixdesign/node-bourbon))
-
 ### Debug Info
 
 ```coffeescript
@@ -44,14 +36,6 @@ debugInfo: false|'normal'|'map'
 ```
 
 `normal` will print comments in the output css that indicates the source file name and line number. `map` will produce a sourcemap. Using either of these options instead of `none` will prevent you from being able to run any other process on the file (e.g. `FILE.css.scss.eco`), because `debugInfo` requires passing an actual file instead of `stdin`.
-
-### Neat
-
-```coffeescript
-neat: false|true
-```
-
-If set to `true`, the [Neat](http://neat.bourbon.io/) semantic grid framework will be available for use. (Using the [node port](https://github.com/lacroixdesign/node-neat).) Setting this to `true` will also set `bourbon` to `true`.
 
 ### Render Underscore Stylesheets
 
@@ -78,13 +62,30 @@ And then configure it by setting the `nodesass.options.importer` to the import-o
         nodesass:
             options:
                 importer: require('node-sass-import-once')
-                importOnce: 
+                importOnce:
                     index: true # @import 'foo'; will load foo/_index.scss if foo is a folder
                     css: true # @import 'bar'; will import bar.css
-                    bower: true # automatically search bower_components directory for imports 
-			    
+                    bower: true # automatically search bower_components directory for imports
 ```
 
+### Bourbon example
+
+The [node-bourbon](https://github.com/lacroixdesign/node-bourbon) module includes a simple and lightweight mixin library.
+
+Install it with
+
+```bash
+npm install --save node-bourbon
+```
+
+And then configure it by setting `nodesass.options.includePaths` to the `includePaths` provided by the module.
+
+```coffee
+    plugins:
+        nodesass:
+            options:
+                includePaths: require('node-bourbon').includePaths
+```
 
 ## History
 [You can discover the history inside the `History.md` file](https://github.com/jking90/docpad-plugin-nodesass/blob/master/History.md)
