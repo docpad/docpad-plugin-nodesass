@@ -61,6 +61,30 @@ renderUnderscoreStylesheets: false|true
 
 By default we prevent any SCSS stylesheets that filename starts with underscore character from being rendered and written to the output directory. This is to follow SCSS convention that such files are just intended to be included inside out stylesheets, and that they are not meant to be rendered by themselves. If you really want to, you can render the underscore stylesheets by setting the `renderUnderscoreStylesheets` option to `true` in your plugin's configuration.
 
+### import-once example
+
+The [node-sass-import-once](https://www.npmjs.com/package/node-sass-import-once) module speeds up rendering by only importing files once. It also adds a few additional features including automatically importing from `bower_components/`.
+
+Install it with
+
+```bash
+npm install --save node-sass-import-once
+```
+
+And then configure it by setting the `nodesass.options.importer` to the import-once module:
+
+```coffee
+    plugins:
+        nodesass:
+            options:
+                importer: require('node-sass-import-once')
+                importOnce: 
+                    index: true # @import 'foo'; will load foo/_index.scss if foo is a folder
+                    css: true # @import 'bar'; will import bar.css
+                    bower: true # automatically search bower_components directory for imports 
+			    
+```
+
 
 ## History
 [You can discover the history inside the `History.md` file](https://github.com/jking90/docpad-plugin-nodesass/blob/master/History.md)

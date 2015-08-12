@@ -22,6 +22,7 @@
   ],
   "contributors": [
     "Merrick Christensen <merrick.christensen@gmail.com> (https://github.com/iammerrick)",
+    "Nathan Friedly (http://nfriedly.com/)",
     "Jimmy King <hello@jimmyking.me> (https://github.com/jking90)",
     "Jan Kolkmeier <jankolkmeier@gmail.com> (https://github.com/jouz)",
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
@@ -41,9 +42,10 @@
     "docpad": ">=6.3 <7"
   },
   "dependencies": {
-    "node-sass": "~3.0.0",
+    "async": "^1.4.2",
     "node-bourbon": "~4.2.2",
-    "node-neat": "~1.4.2"
+    "node-neat": "~1.4.2",
+    "node-sass": "~3.0.0"
   },
   "devDependencies": {
     "coffee-script": "^1.9.2",
