@@ -1,5 +1,11 @@
 ## History
-- v2.7.2
+
+- v2.8.0 Aug 12, 2015
+  - Deprecated `bourbon` and `neat` options
+  - Updated dependencies
+  - Made async (#36, thanks @nfriedly)
+  
+- v2.7.1
   - Fixed typo in source maps (#32)
 
 - v2.7.0
