@@ -13,8 +13,7 @@
     "stylesheets",
     "preprocessor",
     "css",
-    "node-sass",
-    "bourbon"
+    "node-sass"
   ],
   "author": "Jimmy King <hello@jimmyking.me> (http://jimmyking.me)",
   "maintainers": [
