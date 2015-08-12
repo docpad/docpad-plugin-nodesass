@@ -3,6 +3,10 @@
 
 section {
   @include linear-gradient(to top, red, orange);
+  font: {
+    family: $lucida-grande;
+    size: golden-ratio(14px,  1);
+  }
 }
 
 div {
