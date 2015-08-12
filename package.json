@@ -22,11 +22,11 @@
   ],
   "contributors": [
     "Merrick Christensen <merrick.christensen@gmail.com> (https://github.com/iammerrick)",
+    "Nathan Friedly (http://nfriedly.com/)",
     "Jimmy King <hello@jimmyking.me> (https://github.com/jking90)",
     "Jan Kolkmeier <jankolkmeier@gmail.com> (https://github.com/jouz)",
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
-    "Johannes Troeger (https://github.com/johannestroeger)",
-    "Nathan Friedly (http://nfriedly.com/)"
+    "Johannes Troeger (https://github.com/johannestroeger)"
   ],
   "bugs": {
     "url": "https://github.com/jking90/docpad-plugin-nodesass/issues"
