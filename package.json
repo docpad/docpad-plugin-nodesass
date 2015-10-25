@@ -45,7 +45,7 @@
     "colors": "^1.1.2",
     "node-bourbon": "^4.2.3",
     "node-neat": "^1.7.2",
-    "node-sass": "^3.2.0"
+    "node-sass": "^3.4.0"
   },
   "devDependencies": {
     "coffee-script": "^1.9.2",
