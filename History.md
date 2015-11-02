@@ -1,5 +1,8 @@
 ## History
 
+- v2.8.1 Nov 1, 2015
+  - Exclude node-sass v3.4.1 (#42)
+
 - v2.8.0 Aug 12, 2015
   - Deprecated `bourbon` and `neat` options
   - Updated dependencies

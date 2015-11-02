@@ -1,7 +1,6 @@
 module.exports = {
   plugins: {
     nodesass: {
-      neat: true,
       options: {
         outputStyle: 'compressed',
         precision: 3,
