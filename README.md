@@ -15,7 +15,7 @@ Convention:  `.css.scss`
 ## Install
 
 ```bash
-npm install --save docpad-plugin-nodesass
+docpad install nodesass
 ```
 
 
