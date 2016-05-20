@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "coffee-script": "^1.9.2",
-    "coffeelint": "^1.14.2",
+    "coffeelint": "^1.15.7",
     "docpad": ">=6.37 <7",
     "joe": "^1.6.0",
     "joe-reporter-console": "^1.2.1"
