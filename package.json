@@ -1,6 +1,6 @@
 {
   "name": "docpad-plugin-nodesass",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "description": "Adds support for the Sass CSS pre-processor to DocPad using node-sass",
   "homepage": "https://github.com/jking90/docpad-plugin-nodesass",
   "keywords": [
@@ -41,15 +41,15 @@
     "docpad": ">=6.3 <7"
   },
   "dependencies": {
-    "async": "^1.5.0",
+    "async": "^1.5.2",
     "colors": "^1.1.2",
-    "node-bourbon": "^4.2.3",
+    "node-bourbon": "^4.2.8",
     "node-neat": "^1.7.2",
-    "node-sass": ">=3.2.0 <=3.4.0 || >=4.4.2 <4.0.0"
+    "node-sass": ">=3.7.0"
   },
   "devDependencies": {
     "coffee-script": "^1.9.2",
-    "coffeelint": "^1.13.1",
+    "coffeelint": "^1.15.7",
     "docpad": ">=6.37 <7",
     "joe": "^1.6.0",
     "joe-reporter-console": "^1.2.1"
