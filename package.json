@@ -35,7 +35,7 @@
     "url": "https://github.com/jking90/docpad-plugin-nodesass.git"
   },
   "engines": {
-    "node": ">=0.10"
+    "node": ">= 4"
   },
   "peerDependencies": {
     "docpad": ">=6.3 <7"
