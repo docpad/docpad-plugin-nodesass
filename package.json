@@ -52,7 +52,7 @@
     "coffeelint": "^1.15.7",
     "docpad": ">=6.37 <7",
     "joe": "^1.6.0",
-    "joe-reporter-console": "^1.2.1"
+    "joe-reporter-console": "^2.0.1"
   },
   "license": "MIT",
   "main": "./out/sass.plugin.js",
