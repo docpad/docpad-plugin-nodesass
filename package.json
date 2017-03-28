@@ -38,7 +38,7 @@
     "node": ">=0.10"
   },
   "peerDependencies": {
-    "docpad": ">=6.3 <7"
+    "docpad": ">=6.79.1"
   },
   "dependencies": {
     "async": "^1.5.2",
