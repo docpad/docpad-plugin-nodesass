@@ -48,7 +48,7 @@
     "node-sass": ">=3.7.0"
   },
   "devDependencies": {
-    "coffee-script": "^1.9.2",
+    "coffee-script": "^1.12.5",
     "coffeelint": "^1.15.7",
     "docpad": ">=6.37 <7",
     "joe": "^1.6.0",
