@@ -41,7 +41,7 @@
     "docpad": ">=6.3 <7"
   },
   "dependencies": {
-    "async": "^1.5.2",
+    "async": "^2.4.1",
     "colors": "^1.1.2",
     "node-bourbon": "^4.2.8",
     "node-neat": "^1.7.2",
