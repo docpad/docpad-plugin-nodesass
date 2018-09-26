@@ -1,6 +1,3 @@
-# Seeking new maintainer!
-> Open an issue if you'd like to take this project over.
-
 # [SCSS](http://sass-lang.com/) Plugin for [DocPad](https://docpad.org) using [node-sass](https://github.com/andrew/node-sass)
 
 [![NPM version](https://badge.fury.io/js/docpad-plugin-nodesass.png)](https://npmjs.org/package/docpad-plugin-nodesass "View this project on NPM")
