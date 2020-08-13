@@ -45,6 +45,7 @@
       "patreonUsername": "bevry",
       "paypalURL": "https://bevry.me/paypal",
       "wishlistURL": "https://bevry.me/wishlist",
+      "travisTLD": "com",
       "githubUsername": "docpad",
       "githubRepository": "docpad-plugin-nodesass",
       "githubSlug": "docpad/docpad-plugin-nodesass",
@@ -52,17 +53,23 @@
     }
   },
   "funding": "https://bevry.me/fund",
-  "author": "Jimmy King <hello@jimmyking.me> (http://jimmyking.me)",
+  "author": "Jimmy King <hello@jimmyking.me> (10x.la/croixdrinker)",
   "maintainers": [
-    "Jimmy King <hello@jimmyking.me> (https://github.com/jking90)"
+    "Jimmy King <hello@jimmyking.me> (https://github.com/10xLaCroixDrinker)"
   ],
   "contributors": [
-    "Merrick Christensen <merrick.christensen@gmail.com> (https://github.com/iammerrick)",
-    "Nathan Friedly (http://nfriedly.com/)",
-    "Jimmy King <hello@jimmyking.me> (https://github.com/jking90)",
-    "Jan Kolkmeier <jankolkmeier@gmail.com> (https://github.com/jouz)",
     "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
-    "Johannes Troeger (https://github.com/johannestroeger)"
+    "Chris Hale (https://github.com/chrishale)",
+    "Greenkeeper <support@greenkeeper.io> (https://github.com/greenkeeperio-bot)",
+    "Jan Kolkmeier <jankolkmeier@gmail.com> (https://github.com/jankolkmeier)",
+    "Jimmy King <hello@jimmyking.me> (https://github.com/10xLaCroixDrinker)",
+    "Johannes Troeger (https://github.com/johannestroeger)",
+    "Merrick Christensen <merrick.christensen@gmail.com> (https://github.com/iammerrick)",
+    "Michael Barlock (https://github.com/barlock)",
+    "Michael Duane Mooring (https://github.com/mikeumus)",
+    "Nathan Friedly (https://github.com/nfriedly)",
+    "Thuong Dinh <thuongdinh99@gmail.com> (https://github.com/thuongdinh)",
+    "x6a68 (https://github.com/0x6a68)"
   ],
   "bugs": {
     "url": "https://github.com/docpad/docpad-plugin-nodesass/issues"
@@ -72,7 +79,7 @@
     "url": "https://github.com/docpad/docpad-plugin-nodesass.git"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=14"
   },
   "editions": [
     {
@@ -95,7 +102,7 @@
         "require"
       ],
       "engines": {
-        "node": true
+        "node": "14"
       }
     }
   ],
@@ -114,9 +121,9 @@
     "coffeelint": "^2.1.0",
     "coffeescript": "^2.5.1",
     "docpad": "^6.83.1",
-    "docpad-plugintester": "^1.6.2",
+    "docpad-plugintester": "^1.7.2",
     "projectz": "^2.13.0",
-    "valid-directory": "^2.8.0"
+    "valid-directory": "^3.0.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
@@ -139,5 +146,8 @@
     "our:verify:coffeelint": "coffeelint ./source",
     "our:verify:directory": "valid-directory",
     "test": "docpad-plugintester"
+  },
+  "boundation": {
+    "desiredNodeOnly": true
   }
 }

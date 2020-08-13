@@ -4,7 +4,7 @@
 
 Unless stated otherwise all works are:
 
-<ul><li>Copyright &copy; <a href="http://jimmyking.me">Jimmy King</a></li></ul>
+<ul><li>Copyright &copy; <a href="10x.la/croixdrinker">Jimmy King</a></li></ul>
 
 and licensed under:
 

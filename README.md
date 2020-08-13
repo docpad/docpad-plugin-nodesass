@@ -7,7 +7,7 @@
 
 <!-- BADGES/ -->
 
-<span class="badge-travisci"><a href="http://travis-ci.org/docpad/docpad-plugin-nodesass" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/docpad/docpad-plugin-nodesass/master.svg" alt="Travis CI Build Status" /></a></span>
+<span class="badge-travisci"><a href="http://travis-ci.com/docpad/docpad-plugin-nodesass" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/com/docpad/docpad-plugin-nodesass/master.svg" alt="Travis CI Build Status" /></a></span>
 <span class="badge-npmversion"><a href="https://npmjs.org/package/docpad-plugin-nodesass" title="View this project on NPM"><img src="https://img.shields.io/npm/v/docpad-plugin-nodesass.svg" alt="NPM version" /></a></span>
 <span class="badge-npmdownloads"><a href="https://npmjs.org/package/docpad-plugin-nodesass" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/docpad-plugin-nodesass.svg" alt="NPM downloads" /></a></span>
 <span class="badge-daviddm"><a href="https://david-dm.org/docpad/docpad-plugin-nodesass" title="View the status of this project's dependencies on DavidDM"><img src="https://img.shields.io/david/docpad/docpad-plugin-nodesass.svg" alt="Dependency Status" /></a></span>
@@ -32,13 +32,7 @@ The indented `.sass` syntax is not supported by [node-sass](https://github.com/a
 
 Convention: `.css.scss`
 
-<!-- INSTALL/ -->
 
-<h2>Install</h2>
-
-Install this DocPad plugin by entering <code>docpad install nodesass</code> into your terminal.
-
-<!-- /INSTALL -->
 
 
 ### Output Style
@@ -111,11 +105,24 @@ And then configure it by setting `nodesass.options.includePaths` to the `include
                 includePaths: require('node-bourbon').includePaths
 ```
 
+
+
+
+
+<!-- INSTALL/ -->
+
+<h2>Install</h2>
+
+Install this DocPad plugin by entering <code>docpad install nodesass</code> into your terminal.
+
+<!-- /INSTALL -->
+
+
 <!-- HISTORY/ -->
 
 <h2>History</h2>
 
-<a href="https://github.com/docpad/docpad-plugin-nodesass/blob/master/History.md#files">Discover the release history by heading on over to the <code>History.md</code> file.</a>
+<a href="https://github.com/docpad/docpad-plugin-nodesass/blob/master/HISTORY.md#files">Discover the release history by heading on over to the <code>HISTORY.md</code> file.</a>
 
 <!-- /HISTORY -->
 
@@ -124,7 +131,7 @@ And then configure it by setting `nodesass.options.includePaths` to the `include
 
 <h2>Contribute</h2>
 
-<a href="https://github.com/docpad/docpad-plugin-nodesass/blob/master/Contributing.md#files">Discover how you can contribute by heading on over to the <code>Contributing.md</code> file.</a>
+<a href="https://github.com/docpad/docpad-plugin-nodesass/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
 <!-- /CONTRIBUTE -->
 
@@ -137,7 +144,7 @@ And then configure it by setting `nodesass.options.includePaths` to the `include
 
 These amazing people are maintaining this project:
 
-<ul><li><a href="http://jimmyking.me">Jimmy King</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=jking90" title="View the GitHub contributions of Jimmy King on repository docpad/docpad-plugin-nodesass">view contributions</a></li></ul>
+<ul><li><a href="10x.la/croixdrinker">Jimmy King</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=10xLaCroixDrinker" title="View the GitHub contributions of Jimmy King on repository docpad/docpad-plugin-nodesass">view contributions</a></li></ul>
 
 <h3>Sponsors</h3>
 
@@ -157,14 +164,20 @@ No sponsors yet! Will you be the first?
 
 These amazing people have contributed code to this project:
 
-<ul><li><a href="https://github.com/iammerrick">Merrick Christensen</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=iammerrick" title="View the GitHub contributions of Merrick Christensen on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
-<li><a href="http://nfriedly.com/">Nathan Friedly</a></li>
-<li><a href="http://jimmyking.me">Jimmy King</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=jking90" title="View the GitHub contributions of Jimmy King on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
-<li><a href="https://github.com/jouz">Jan Kolkmeier</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=jouz" title="View the GitHub contributions of Jan Kolkmeier on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
-<li><a href="https://github.com/balupton">Benjamin Lupton</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
-<li><a href="https://github.com/johannestroeger">Johannes Troeger</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=johannestroeger" title="View the GitHub contributions of Johannes Troeger on repository docpad/docpad-plugin-nodesass">view contributions</a></li></ul>
+<ul><li><a href="https://github.com/balupton">Benjamin Lupton</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
+<li><a href="https://github.com/chrishale">Chris Hale</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=chrishale" title="View the GitHub contributions of Chris Hale on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
+<li><a href="https://github.com/greenkeeperio-bot">Greenkeeper</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=greenkeeperio-bot" title="View the GitHub contributions of Greenkeeper on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
+<li><a href="https://github.com/jankolkmeier">Jan Kolkmeier</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=jankolkmeier" title="View the GitHub contributions of Jan Kolkmeier on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
+<li><a href="10x.la/croixdrinker">Jimmy King</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=10xLaCroixDrinker" title="View the GitHub contributions of Jimmy King on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
+<li><a href="https://github.com/johannestroeger">Johannes Troeger</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=johannestroeger" title="View the GitHub contributions of Johannes Troeger on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
+<li><a href="https://github.com/iammerrick">Merrick Christensen</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=iammerrick" title="View the GitHub contributions of Merrick Christensen on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
+<li><a href="https://github.com/barlock">Michael Barlock</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=barlock" title="View the GitHub contributions of Michael Barlock on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
+<li><a href="https://github.com/mikeumus">Michael Duane Mooring</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=mikeumus" title="View the GitHub contributions of Michael Duane Mooring on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
+<li><a href="https://github.com/nfriedly">Nathan Friedly</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=nfriedly" title="View the GitHub contributions of Nathan Friedly on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
+<li><a href="https://github.com/thuongdinh">Thuong Dinh</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=thuongdinh" title="View the GitHub contributions of Thuong Dinh on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
+<li><a href="https://github.com/0x6a68">x6a68</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=0x6a68" title="View the GitHub contributions of x6a68 on repository docpad/docpad-plugin-nodesass">view contributions</a></li></ul>
 
-<a href="https://github.com/docpad/docpad-plugin-nodesass/blob/master/Contributing.md#files">Discover how you can contribute by heading on over to the <code>Contributing.md</code> file.</a>
+<a href="https://github.com/docpad/docpad-plugin-nodesass/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
 <!-- /BACKERS -->
 
@@ -175,7 +188,7 @@ These amazing people have contributed code to this project:
 
 Unless stated otherwise all works are:
 
-<ul><li>Copyright &copy; <a href="http://jimmyking.me">Jimmy King</a></li></ul>
+<ul><li>Copyright &copy; <a href="10x.la/croixdrinker">Jimmy King</a></li></ul>
 
 and licensed under:
 

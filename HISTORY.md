@@ -1,9 +1,9 @@
 # History
 
-## v2.9.0 2020 August 6
+## v2.9.0 2020 August 13
 
 -   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
--   Minimum required node version changed from `node: >=0.10` to `node: >=10` to keep up with mandatory ecosystem changes
+-   Minimum required node version changed from `node: >=0.10` to `node: >=14` to keep up with mandatory ecosystem changes
 
 ## v2.8.1 2015 Nov 1
 
