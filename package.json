@@ -5,7 +5,6 @@
   "homepage": "https://github.com/docpad/docpad-plugin-nodesass",
   "license": "MIT",
   "keywords": [
-    "coffeescript",
     "docpad",
     "docpad-plugin",
     "esnext",
@@ -84,22 +83,20 @@
   },
   "editions": [
     {
-      "description": "CoffeeScript source code with Require for modules",
+      "description": "Javascript source code with Require for modules",
       "directory": "source",
-      "entry": "index.coffee",
+      "entry": "index.js",
       "tags": [
         "source",
-        "coffeescript",
         "require"
       ],
       "engines": false
     },
     {
-      "description": "CoffeeScript compiled for Node.js with Require for modules",
-      "directory": "edition-esnext",
+      "description": "ESNext source code for Node.js 10 || 12 || 13 || 14 with Require for modules",
+      "directory": "source",
       "entry": "index.js",
       "tags": [
-        "compiled",
         "javascript",
         "esnext",
         "require"
@@ -112,19 +109,19 @@
   "type": "commonjs",
   "main": "edition-esnext/index.js",
   "dependencies": {
-    "async": "^3.2.0",
+    "async": "^3.2.3",
     "colors": "^1.4.0",
     "docpad-baseplugin": "^1.4.0",
     "node-bourbon": "^4.2.8",
     "node-neat": "^1.7.2",
-    "node-sass": ">=4.14.1"
+    "node-sass": "^7.0.1"
   },
   "devDependencies": {
-    "@bevry/update-contributors": "^1.17.0",
-    "coffeelint": "^2.1.0",
-    "coffeescript": "^2.5.1",
+    "@bevry/update-contributors": "^1.21.0",
     "docpad": "^6.83.2",
     "docpad-plugintester": "^1.7.3",
+    "eslint": "^8.8.0",
+    "eslint-config-bevry": "^3.27.0",
     "projectz": "^2.16.0",
     "valid-directory": "^3.4.0"
   },
@@ -133,8 +130,7 @@
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
-    "our:compile": "npm run our:compile:edition-esnext",
-    "our:compile:edition-esnext": "coffee -bco ./edition-esnext ./source && echo '{\"type\": \"commonjs\"}' > edition-esnext/package.json",
+    "our:compile": "echo no need for this project",
     "our:deploy": "echo no need for this project",
     "our:meta": "npm run our:meta:contributors && npm run our:meta:projectz",
     "our:meta:contributors": "update-contributors",
@@ -149,8 +145,8 @@
     "our:setup:dpt": "cd test && npm install && cd ..",
     "our:setup:install": "npm install",
     "our:test": "npm run our:verify && npm test",
-    "our:verify": "npm run our:verify:coffeelint && npm run our:verify:directory",
-    "our:verify:coffeelint": "coffeelint ./source",
+    "our:verify": "npm run our:verify:eslint && npm run our:verify:directory",
+    "our:verify:eslint": "eslint --fix --ignore-pattern '**/*.d.ts' --ignore-pattern '**/vendor/' --ignore-pattern '**/node_modules/' --ext .mjs,.js,.jsx,.ts,.tsx ./source",
     "our:verify:directory": "valid-directory",
     "test": "docpad-plugintester"
   },
