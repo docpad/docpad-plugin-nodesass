@@ -1,6 +1,6 @@
 {
   "name": "docpad-plugin-nodesass",
-  "version": "2.11.0",
+  "version": "2.12.0",
   "description": "Adds support for the Sass CSS pre-processor to DocPad using node-sass",
   "homepage": "https://github.com/docpad/docpad-plugin-nodesass",
   "license": "MIT",

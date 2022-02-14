@@ -1,5 +1,10 @@
 # History
 
+## v2.12.0 2022 February 15
+
+-   Fix compatibility with DocPad v6.80 and above [issue #105](https://github.com/docpad/docpad-plugin-nodesass/issues/105)
+-   Updated node-sass to v7.0.1
+
 ## v2.11.0 2020 September 8
 
 -   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
