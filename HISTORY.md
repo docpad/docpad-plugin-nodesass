@@ -55,18 +55,18 @@
 
 ## v2.4.3 2014 July 2
 
--   Fixed [#15](https://github.com/jking90/docpad-plugin-nodesass/issues/15)
+-   Fixed [#15](https://github.com/docpad/docpad-plugin-nodesass/issues/15)
 -   Removed mkdirp as a dependency
 -   Switched from writing `.map` file to disk to including it as a data URI
 
 ## v2.4.2 2014 June 16
 
--   Implemented `precision` option (fixed [#10](https://github.com/jking90/docpad-plugin-nodesass/issues/10))
+-   Implemented `precision` option (fixed [#10](https://github.com/docpad/docpad-plugin-nodesass/issues/10))
 -   Updated [node-sass](https://github.com/andrew/node-sass) to [0.9.3](https://github.com/andrew/node-sass/releases/tag/v0.9.3)
 
 ## v2.4.1 2014 June 11
 
--   Fixed [#9](https://github.com/jking90/docpad-plugin-nodesass/issues/9)
+-   Fixed [#9](https://github.com/docpad/docpad-plugin-nodesass/issues/9)
 -   Added tests for bourbon and neat
 
 ## v2.4.0 2014 June 9
@@ -83,7 +83,7 @@
 
 ## v2.2.1 2014 Jan 14
 
--   Fixed [#4](https://github.com/jking90/docpad-plugin-nodesass/issues/4)
+-   Fixed [#4](https://github.com/docpad/docpad-plugin-nodesass/issues/4)
 -   Updated [node-sass](https://github.com/andrew/node-sass) to [0.8.1](https://github.com/andrew/node-sass/releases/tag/v0.8.1)
 
 ## v2.2.0 2014 Jan 13
