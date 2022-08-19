@@ -150,7 +150,7 @@ Install this DocPad plugin by entering <code>docpad install nodesass</code> into
 
 These amazing people are maintaining this project:
 
-<ul><li><a href="10x.la/croixdrinker">Jimmy King</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=10xLaCroixDrinker" title="View the GitHub contributions of Jimmy King on repository docpad/docpad-plugin-nodesass">view contributions</a></li></ul>
+<ul><li><a href="10x.la/croixdrinker">Jamie King</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=10xLaCroixDrinker" title="View the GitHub contributions of Jamie King on repository docpad/docpad-plugin-nodesass">view contributions</a></li></ul>
 
 <h3>Sponsors</h3>
 
@@ -174,7 +174,7 @@ These amazing people have contributed code to this project:
 <li><a href="https://github.com/chrishale">Chris Hale</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=chrishale" title="View the GitHub contributions of Chris Hale on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
 <li><a href="https://github.com/greenkeeperio-bot">Greenkeeper</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=greenkeeperio-bot" title="View the GitHub contributions of Greenkeeper on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
 <li><a href="https://github.com/jankolkmeier">Jan Kolkmeier</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=jankolkmeier" title="View the GitHub contributions of Jan Kolkmeier on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
-<li><a href="10x.la/croixdrinker">Jimmy King</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=10xLaCroixDrinker" title="View the GitHub contributions of Jimmy King on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
+<li><a href="10x.la/croixdrinker">Jamie King</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=10xLaCroixDrinker" title="View the GitHub contributions of Jamie King on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
 <li><a href="https://github.com/johannestroeger">Johannes Troeger</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=johannestroeger" title="View the GitHub contributions of Johannes Troeger on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
 <li><a href="https://github.com/iammerrick">Merrick Christensen</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=iammerrick" title="View the GitHub contributions of Merrick Christensen on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
 <li><a href="https://github.com/barlock">Michael Barlock</a> — <a href="https://github.com/docpad/docpad-plugin-nodesass/commits?author=barlock" title="View the GitHub contributions of Michael Barlock on repository docpad/docpad-plugin-nodesass">view contributions</a></li>
@@ -194,7 +194,7 @@ These amazing people have contributed code to this project:
 
 Unless stated otherwise all works are:
 
-<ul><li>Copyright &copy; <a href="10x.la/croixdrinker">Jimmy King</a></li></ul>
+<ul><li>Copyright &copy; <a href="10x.la/croixdrinker">Jamie King</a></li></ul>
 
 and licensed under:
 
