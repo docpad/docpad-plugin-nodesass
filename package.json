@@ -114,7 +114,7 @@
     "docpad-baseplugin": "^1.4.0",
     "node-bourbon": "^4.2.8",
     "node-neat": "^1.7.2",
-    "node-sass": "^7.0.1"
+    "node-sass": "^9.0.0"
   },
   "devDependencies": {
     "@bevry/update-contributors": "^1.21.0",
